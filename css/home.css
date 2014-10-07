@@ -16,6 +16,8 @@
 	line-height: 200px;
 }
 
+/* Movies' grid and cards */
+
 .movies-grid{
 	background-color: #F1EDE1;
 }
@@ -31,4 +33,7 @@
 .movie-card h3{
 	text-transform: uppercase;
 	margin: 0;
+}
+.movie-subtitle{
+	font-size: 1.2em;
 }
