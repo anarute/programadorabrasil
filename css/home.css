@@ -6,11 +6,11 @@
 	color: #C51011;
 	text-align: center;
 
-	margin: 0 auto;
+	margin: auto;
 	overflow: hidden;
 
-	height: 200px;
-	width: 200px;
+	height: 300px;
+	width: 300px;
 }
 .cta-home a{
 	color: #C51011;
@@ -29,11 +29,11 @@
 
 	color: #333;
 
-	margin: 10px;
-	padding: 1em;
+	margin: 10px 0;
+
 }
-.movie-card h3{
-	text-transform: uppercase;
+.movie-card h4{
+
 	margin: 0;
 }
 .movie-subtitle{
