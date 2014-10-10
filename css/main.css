@@ -26,6 +26,7 @@
 }
 /* Footer styles */
 footer{
+	border-top: 5px solid #FFBE00;
 	background-color: #333;
 	color: #FFF;
 }

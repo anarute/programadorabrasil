@@ -19,7 +19,38 @@
 }
 
 /* Movies' grid and cards */
+.programa {
+		background-color: black;
+}
 
+.programa figure {
+	background: url(../img/baile.jpg) ;
+	background-size: cover;
+	height: 140px;
+}
+.programa figure>img {
+	display: none;
+}
+.programa figure>figcaption {
+	color: white;
+	background: rgba(0,0,0,0.5);
+	border-radius: 2px;
+	height: 100%;
+}
+.programa figure>figcaption>h3 {
+	text-transform: uppercase;
+	font-size: 1.2em;
+	margin: 0.5em 0;
+	color: #FFBE00;
+}
+.programa figure>figcaption>p {
+	font-style: italic
+}
+.movies-grid>div>header {
+	color: #C51011;
+	font-size: 1.4em;
+	border-bottom: 1px solid #FFBE00;
+	}
 .movies-grid{
 	background-color: #F1EDE1;
 }
