@@ -29,7 +29,6 @@
 	height: 140px;
 }
 .programa figure>img {
-	display: none;
 }
 .programa figure>figcaption {
 	color: white;
@@ -44,7 +43,8 @@
 	color: #FFBE00;
 }
 .programa figure>figcaption>p {
-	font-style: italic
+	font-style: italic;
+	font-size: 0.9em
 }
 .movies-grid>div>header {
 	color: #C51011;
