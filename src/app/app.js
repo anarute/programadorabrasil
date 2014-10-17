@@ -1,8 +1,8 @@
-angular.module( 'ngBoilerplate', [
+angular.module( 'programadoraBrasil', [
   'templates-app',
   'templates-common',
-  'ngBoilerplate.home',
-  'ngBoilerplate.about',
+  'programadoraBrasil.home',
+  'programadoraBrasil.about',
   'ui.router'
 ])
 
