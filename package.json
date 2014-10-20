@@ -1,8 +1,8 @@
 {
-  "author": "Josh David Miller",
-  "name": "ngbp",
+  "author": "Cinemateca Brasileira",
+  "name": "produtoraBrasil",
   "version": "0.3.2",
-  "homepage": "https://github.com/ngbp/ngbp",
+  "homepage": "http://cinemateca.gov.br",
   "licenses": {
     "type": "MIT",
     "url": "https://raw.github.com/ngbp/ngbp/master/LICENSE"

@@ -24,10 +24,10 @@ angular.module( 'programadoraBrasil.home', [
  */
 .config(function config( $stateProvider ) {
   $stateProvider.state( 'home', {
-    url: '/home',
+    url: '/',
     views: {
       "main": {
-        controller: 'HomeCtrl',
+        controller: 'homeCtrl',
         templateUrl: 'home/home.tpl.html'
       }
     },
@@ -38,7 +38,7 @@ angular.module( 'programadoraBrasil.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
+.controller( 'homeCtrl', function HomeController( $scope ) {
 })
 
 ;

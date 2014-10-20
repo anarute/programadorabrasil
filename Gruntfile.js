@@ -98,6 +98,16 @@ module.exports = function ( grunt ) {
      * `build_dir`, and then to copy the assets to `compile_dir`.
      */
     copy: {
+      htaccess: {
+        files: [
+          { 
+            src: [ '.htaccess' ],
+            dest: '<%= build_dir %>/',
+            cwd: '.',
+            dot: true
+          }
+       ]   
+      },
       build_app_assets: {
         files: [
           { 
@@ -555,7 +565,7 @@ module.exports = function ( grunt ) {
     'clean', 'html2js', 'jshint', 'coffeelint', 'coffee', 'less:build',
     'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets',
     'copy:build_appjs', 'copy:build_vendorjs', 'index:build', 'karmaconfig',
-    'karma:continuous' 
+    'karma:continuous', 'copy:htaccess'
   ]);
 
   /**
