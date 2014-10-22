@@ -1,0 +1,39 @@
+ {
+	"programas":[
+		{
+			"n":"143", 
+			"titulo":"Encontros e desencontros do amor",
+			"sinopse":"Sobre o amor muito se disse, se cantou e se viveu – mas, sobretudo, muito se filmou!",
+			"img":"baile.jpg",
+			"thumb":"programa.jpg"
+		},
+		{
+			"n":"144", 
+			"titulo":"O Cavalinho Azul e Portinholas",
+			"sinopse":"Filmes inspirados na literatura, na pintura e no teatro brasileiro voltados para o público infanto-juvenil ",
+			"img":"amor.jpg",
+			"thumb":"programa1.jpg"
+		},
+		{
+			"n":"145", 
+			"titulo":"O Chamado de Deus",
+			"sinopse":"Prêmios de melhor documentário e melhor montagem no Festival de Brasília de 2000, o filme O chamado de Deus apresenta uma visão atual da Igreja Católica no país.",
+			"img":"baile.jpg",
+			"thumb":"programa2.jpg"
+		},
+		{
+			"n":"146", 
+			"titulo":"Encontros e desencontros do amor",
+			"sinopse":"Segundo longa-metragem de Chico Botelho",
+			"img":"amor.jpg",
+			"thumb":"programa3.jpg"
+		},
+		{
+			"n":"147", 
+			"titulo":"Encontros e desencontros do amor",
+			"sinopse":"Estorvo, adaptação do romance homônimo de Chico Buarque, assinala uma ruptura com a linguagem hegemônica do cinema brasileiro dos anos 90.",
+			"img":"baile.jpg",
+			"thumb":"programa4.jpg"
+		}
+	]
+}

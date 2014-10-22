@@ -1,25 +1,86 @@
-<div ng-controller="homeCtrl" class="jumbotron">
-  <div class="main container">
-    <div class="col-sm-12">
-      <p style="font-size: 1.5em; font-weight: 300">Desde 2007, a Programadora Brasil, programa da Secretaria do Audiovisual do Ministério da Cultura, realizado pela Sociedade Amigos da Cinemateca, lança, em DVDs, um conjunto de filmes brasileiros licenciados para sessões sem fins lucrativos em pontos associados à iniciativa</p>
-    </div>
+<div ng-controller="homeCtrl" class="home">
+  <header class="main container">
     <div class="row">
       <div class="col-sm-6">
         <div class="cta-home">
-          <a href="#">catálogo de programas</a>
+          <a href="#">catálogo</a>
         </div>
-        <p class="text-center">
-          texto explicativo
-        </p>
       </div>
       <div class="col-sm-6">
         <div class="cta-home">
-          <a href="#">cadastro de exibidores</a>
+          <a href="#">cadastro</a>
         </div>
-        <p class="text-center">
-          texto explicativo
-        </p>
       </div>
     </div>
+  </header>
+
+<div class="content">
+  <div class="container">
+    <div class="row">
+    <div class="col-sm-4">
+      <p style="font-size: 1.5em; margin: 1em; font-weight: 300">Desde 2007, a Programadora Brasil, programa da Secretaria do Audiovisual do Ministério da Cultura, realizado pela Sociedade Amigos da Cinemateca, lança, em DVDs, um conjunto de filmes brasileiros licenciados para sessões sem fins lucrativos em pontos associados à iniciativa</p>
+    </div>
+
+    <section class="col-sm-4">
+      <header><h2>AGENDA</h2></header>
+      <hr class="col-sm-12" />
+      <div>
+        <p>Desde 2007, a Programadora Brasil, programa da Secretaria do Audiovisual do Ministério da Cultura, realizado pela Sociedade Amigos da Cinemateca, lança, em DVDs, um conjunto de filmes brasileiros licenciados para sessões sem fins lucrativos em pontos associados à iniciativa</p>
+      </div>
+    </section>
+    <section class="col-sm-4">
+      <header><h2>Novidades</h2></header>
+      <hr class="col-sm-12" />
+      <div>
+        <p>Desde 2007, a Programadora Brasil, programa da Secretaria do Audiovisual do Ministério da Cultura, realizado pela Sociedade Amigos da Cinemateca, lança, em DVDs, um conjunto de filmes brasileiros licenciados para sessões sem fins lucrativos em pontos associados à iniciativa</p>
+      </div>
+    </section>
   </div>
+  <hr />
+
+  <section class="col-sm-8">
+    <header>
+      <h2>Últimos Filmes</h2>
+    </header>
+    <div class="col-sm-12" ng-repeat="programa in programas">
+    <article class="movie-card panel panel-default programa">
+      <header class="panel-heading" style="background: #FFBE00">
+        <h4>#{{programa.n}} {{programa.titulo}}</h4>
+      </header>
+      <figure class="panel-body"  style="background-image: url(assets/img/{{programa.img}})">
+        <figcaption class="col-xs-4">
+            <p>{{programa.sinopse}}</p>
+        </figcaption>
+        <div class="col-xs-3 text-center pull-right">
+          <i class="glyphicon glyphicon-play-circle"></i>
+          <small>Assistir trecho</small><br />
+          <i class="glyphicon glyphicon-list-alt"></i>
+          <small>Ficha técnica</small>
+        </div>
+
+      </figure>
+    </article>
+    </div>
+  </section>
+    <section class="col-sm-4">
+      <header>
+        <h2>Últimos Programas</h2>
+      </header>
+      <div class="col-sm-12" ng-repeat="programa in programas">
+      <article class="movie-card panel panel-default programa">
+        <header class="panel-heading" style="background: #FFBE00">
+          <h4>#{{programa.n}} {{programa.titulo}}</h4>
+        </header>
+        <figure class="panel-body" >
+          <img class="col-xs-4" ng-src="assets/img/{{programa.thumb}}" />
+          <figcaption class="col-xs-8">
+              <h3>Programa {{programa.n}}</h3>
+              <p>{{programa.sinopse}}</p>
+          </figcaption>
+        </figure>
+      </article>
+      </div>
+    </section>
+  </div>
+</div>
 </div>

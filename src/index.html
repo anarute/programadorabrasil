@@ -41,23 +41,27 @@
 <body>
 	<header class="navbar main-navbar">
 		<div class="container">
-		<a class="navbar-brand" href="#about"><img src="assets/img/logo.png" class="img-responsive" title="Programadora Brasil"/></a>
-		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a ng-href="../">Login</a></li>
-				<li><a ng-href="about">Catálogo</a></li>
-			</ul>
-			<form class="navbar-form navbar-left" role="search">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Buscar no catálogo">
-				</div>
-				<button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-			</form>
-		</div><!--/.navbar-collapse -->
+			<a class="navbar-brand" href="#about"><img src="assets/img/logo.png" class="img-responsive" title="Programadora Brasil"/></a>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a ng-href="../">Como funciona?</a></li>
+					<li><a ng-href="../">História</a></li>
+					<li><a ng-href="../">Revista</a></li>
+					<li><a ng-href="about">Catálogo</a></li>
+					<li><a ng-href="about">Cadastro</a></li>
+					<li><a ng-href="../">Login</a></li>
+				</ul>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Buscar no catálogo">
+					</div>
+					<button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+				</form>
+			</div><!--/.navbar-collapse -->
 		</div>
 	</header>
 
-	<section ng-view="main"> <!-- view principal!! -->
+	<section ui-view="main"> <!-- view principal!! -->
 	</section>
 
 	<footer>

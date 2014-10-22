@@ -38,8 +38,14 @@ angular.module( 'programadoraBrasil.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'homeCtrl', function HomeController( $scope ) {
+.controller( 'homeCtrl', function HomeController( $scope, $http) {
+  $http.get('assets/json/programas.json').
+    success(function(data, status, headers, config) {
+      $scope.programas = data.programas;
+    }).
+    error(function(data, status, headers, config) {
+      // log error
+    });
 })
-
 ;
 
