@@ -6,31 +6,76 @@ body {
 .movie-container {
     margin-top: 60px;
 }
-.programa {
+.movie-card {
     background-color: black;
 }
-.programa > header {
+.movie-card .panel-heading:before {
     background: url(../img/baile.jpg);
     background-size: cover;
+    -webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px);
+	height: 100%;
+	width: 100%;
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
 }
-.programa figure>img {} .programa figure>figcaption {
-    color: white;
+.movie-card .panel-heading{
+    color: #FFF;
+    position: relative;
+	overflow: hidden;
+}
+.movie-card .panel-heading .header-content{
+	position: relative;
+	text-shadow: 2px 2px 1px rgba(50, 50, 50, 0.8);
+	background-color: rgba(0,0,0,0.3);
+}
+
+
+.age-rating, .serie, .duration{
+	background-color: #FFF;
+	padding: 5px;
+	border-radius: 2px;
+	text-shadow: none;
+	font-weight: normal;
+	color: #444;
+	margin: 2px;
+}
+.movies-list{
+	padding: 0;
+	list-style: none;
+}
+.movies-list li{
+	padding: 5px;
+	font-size: 1.1em;
+	margin-bottom: 2px;
+	border-bottom: 2px solid #ccc;
+}
+.capa{
+	width: 100%;
+}
+.movie-card figure>figcaption {
+    color: #FFF;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 2px;
     height: 100%;
 }
-.programa figure>figcaption>h3 {
+.movie-card figure>figcaption>h3 {
     text-transform: uppercase;
     font-size: 1.2em;
     margin: 0.5em 0;
     color: #FFBE00;
 }
-.programa figure>figcaption>p {
+.movie-card figure>figcaption>p {
     font-style: italic;
     font-size: 0.9em
 }
 .movies-grid>div>header {
-    color: #C51011;
+	color: #FFF;
     font-size: 1.4em;
     border-bottom: 1px solid #FFBE00;
 }
