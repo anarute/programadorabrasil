@@ -1,0 +1,48 @@
+/* Movies' grid and cards */
+
+body {
+    background-color: #F1EDE1;
+}
+.movie-container {
+    margin-top: 60px;
+}
+.programa {
+    background-color: black;
+}
+.programa > header {
+    background: url(../img/baile.jpg);
+    background-size: cover;
+}
+.programa figure>img {} .programa figure>figcaption {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    height: 100%;
+}
+.programa figure>figcaption>h3 {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    color: #FFBE00;
+}
+.programa figure>figcaption>p {
+    font-style: italic;
+    font-size: 0.9em
+}
+.movies-grid>div>header {
+    color: #C51011;
+    font-size: 1.4em;
+    border-bottom: 1px solid #FFBE00;
+}
+.movie-card {
+    background-color: #FFF;
+    border-radius: 3px;
+    color: #333;
+    margin: 10px 0;
+}
+.movie-card h4 {
+    margin: 0;
+}
+.movie-subtitle {
+    font-size: 1.2em;
+}
