@@ -1,123 +1,136 @@
 <div ng-controller="homeCtrl" class="home">
-<header class="main container">
-	<div class="row">
-	<div class="col-sm-4">
-		<div class="cta-home">
-			<a ng-href="catalogo">catálogo</a>
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="cta-home">
-			<a ng-href="#">cadastro</a>
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="cta-home">
-			<a ng-href="#">cadastro</a>
-		</div>
-	</div>
-	</div>
-</header>
-<div class="content">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<p style="font-size: 1.5em; margin: 1em; font-weight: 300">Desde 2007, a Programadora Brasil, programa da Secretaria do Audiovisual do Ministério da Cultura, realizado pela Sociedade Amigos da Cinemateca, lança, em DVDs, um conjunto de filmes brasileiros licenciados para sessões sem fins lucrativos em pontos associados à iniciativa</p>
-			</div>
-			<section class="col-sm-4">
-				<hr class="col-sm-12" />
-				<header><h2>AGENDA</h2></header>
-				<hr class="dotted" />
-					<table class="table table-striped table-responsive">
-						<thead>
-							<tr>
-							<th>Dia/Mês</th>
-							<th>Cidade - UF</th>
-							<th>Tipo</th>
-							<th>Nome do evento</th>
-							</tr>
-						</thead>
-						<tbody>
-						<tr>
-							<td>01/09</td>
-							<td>São José dos Campos - SP</td>
-							<td>Exibição</td>
-							<td>Festival Jeca 2014</td>
-						</tr>
-						<tr>
-							<td>04/09</td>
-							<td>Jacareí - SP</td>
-							<td>Exibição</td>
-							<td>Fapija 2014</td>
-						</tr>
-						<tr>
-							<td>06/09</td>
-							<td>Taubaté - SP</td>
-							<td>Exibição</td>
-							<td>Festival Mazaroppi 2014</td>
-						</tr>
-						</tbody>
-					</table>
-			</section>
-			<section class="col-sm-4">
-				<hr class="col-sm-12" />
-				<header><h2>Novidades</h2></header>
-				<hr class="dotted" />
-				<article>
-					<h3>Lançamento do site novo</h3>
-					<p>Desde 2007, a Programadora Brasil vem tentando fazer um site bom (<small><em>Leia mais...</em></small>)</p>
-				</article>
-				<hr class="dotted" />
-				<article>
-					<h3>Lançamento do site novo</h3>
-					<p>Desde 2007, a Programadora Brasil vem tentando fazer um site bom (<small><em>Leia mais...</em></small>)</p>
-				</article>
 
-			</section>
-		</div>
-		<hr />
-		<section class="col-sm-8">
-			<header>
-			<h2>Últimos Filmes</h2>
-			</header>
-			<div class="col-sm-12" ng-repeat="programa in programas | limitTo:3">
-				<article class="movie-card panel panel-default filme">
-					<header class="panel-heading" style="background: #FFBE00">
-						<h4>#{{programa.n}} {{programa.titulo}}</h4>
-					</header>
-					<figure class="panel-body" style="background-image: url(assets/img/{{programa.img}})">
-						<figcaption class="col-xs-4 pull-right">
-							<p>{{programa.sinopse}}</p>
-						<div class="col-xs-12 text-center pull-right">
-							<button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-play-circle"></i>
-							<small>Assistir trecho</small></button>
-							<button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-list-alt"></i>
-							<small>Ficha técnica</small></button>
-						</div>
-						</figcaption>
-					</figure>
-				</article>
-			</div>
-		</section>
-		<section class="col-sm-4">
-			<header>
-				<h2>Últimos Programas</h2>
-			</header>
-			<div class="col-sm-12" ng-repeat="programa in programas">
-				<article class="movie-card panel panel-default programa">
-					<header class="panel-heading" style="background: #FFBE00">
-						<h4>#{{programa.n}} {{programa.titulo}}</h4>
-					</header>
-					<figure class="panel-body" >
-						<img class="col-xs-4" ng-src="assets/img/{{programa.thumb}}" />
-						<figcaption class="col-xs-8">
-							<h3>Programa {{programa.n}}</h3>
-							<p>{{programa.sinopse}}</p>
-						</figcaption>
-					</figure>
-				</article>
-			</div>
-		</section>
-	</div>
-</div>
+    <header class="main container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="cta-home">
+                    <a ng-href="programas">catálogo</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="cta-home">
+                    <a ng-href="#">cadastro</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="cta-home">
+                    <a ng-href="#">cadastro</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <p style="font-size: 1.5em; margin: 1em; font-weight: 300">Desde 2007, a Programadora Brasil, programa da Secretaria do Audiovisual do Ministério da Cultura, realizado pela Sociedade Amigos da Cinemateca, lança, em DVDs, um conjunto de filmes brasileiros licenciados para sessões sem fins lucrativos em pontos associados à iniciativa</p>
+                </div>
+                <section class="col-sm-4">
+                    <hr class="col-sm-12" />
+                    <header>
+                        <h2>AGENDA</h2>
+                    </header>
+                    <hr class="dotted" />
+                    <table class="table table-striped table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Dia/Mês</th>
+                                <th>Cidade - UF</th>
+                                <th>Tipo</th>
+                                <th>Nome do evento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01/09</td>
+                                <td>São José dos Campos - SP</td>
+                                <td>Exibição</td>
+                                <td>Festival Jeca 2014</td>
+                            </tr>
+                            <tr>
+                                <td>04/09</td>
+                                <td>Jacareí - SP</td>
+                                <td>Exibição</td>
+                                <td>Fapija 2014</td>
+                            </tr>
+                            <tr>
+                                <td>06/09</td>
+                                <td>Taubaté - SP</td>
+                                <td>Exibição</td>
+                                <td>Festival Mazaroppi 2014</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section class="col-sm-4">
+                    <hr class="col-sm-12" />
+                    <header>
+                        <h2>Novidades</h2>
+                    </header>
+                    <hr class="dotted" />
+                    <article>
+                        <h3>Lançamento do site novo</h3>
+                        <p>Desde 2007, a Programadora Brasil vem tentando fazer um site bom (
+                            <small>
+                                <em>Leia mais...</em>
+                            </small>)</p>
+                    </article>
+                    <hr class="dotted" />
+                    <article>
+                        <h3>Lançamento do site novo</h3>
+                        <p>Desde 2007, a Programadora Brasil vem tentando fazer um site bom (
+                            <small>
+                                <em>Leia mais...</em>
+                            </small>)</p>
+                    </article>
+
+                </section>
+            </div>
+            <hr />
+            <section class="col-sm-8">
+                <header>
+                    <h2>Últimos Filmes</h2>
+                </header>
+                <div class="col-sm-12" ng-repeat="programa in programas | limitTo:3">
+                    <article class="movie-card panel panel-default filme">
+                        <header class="panel-heading" style="background: #FFBE00">
+                            <h4>#{{programa.n}} {{programa.titulo}}</h4>
+                        </header>
+                        <figure class="panel-body" style="background-image: url(assets/img/{{programa.img}})">
+                            <figcaption class="col-xs-4 pull-right">
+                                <p>{{programa.sinopse}}</p>
+                                <div class="col-xs-12 text-center pull-right">
+                                    <button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-play-circle"></i>
+                                        <small>Assistir trecho</small>
+                                    </button>
+                                    <button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-list-alt"></i>
+                                        <small>Ficha técnica</small>
+                                    </button>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </section>
+            <section class="col-sm-4">
+                <header>
+                    <h2>Últimos Programas</h2>
+                </header>
+                <div class="col-sm-12" ng-repeat="programa in programas">
+                    <article class="movie-card panel panel-default programa">
+                        <header class="panel-heading" style="background: #FFBE00">
+                            <h4>#{{programa.n}} {{programa.titulo}}</h4>
+                        </header>
+                        <figure class="panel-body">
+                            <img class="col-xs-4" ng-src="assets/img/{{programa.thumb}}" />
+                            <figcaption class="col-xs-8">
+                                <h3>Programa {{programa.n}}</h3>
+                                <p>{{programa.sinopse}}</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
 </div>

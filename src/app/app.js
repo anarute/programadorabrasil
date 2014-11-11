@@ -3,12 +3,13 @@ angular.module( 'programadoraBrasil', [
   'templates-common',
   'programadoraBrasil.home',
   'programadoraBrasil.about',
+  'programadoraBrasil.programas',
   'ui.router'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
     $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise( 'home' );
+    $urlRouterProvider.otherwise( '/' );
 })
 
 .run( function run () {
