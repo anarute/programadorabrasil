@@ -26,15 +26,22 @@
   background-color: #F1EDE1;
   margin-top: 3em;
   hr {
-    margin: 0 !important;
+    margin: 1.5em 0 1em 0 !important;
     border-top:1px solid #FFBE00
   }
-   h2{
+  hr.dotted {
+    border-top-style: dotted !important;
+  }
+  h2{
     text-transform: uppercase;
     color: #C51011;
     font-weight: 600;
     font-size: 1.5em
-   }
+  }
+  h3 {
+    font-size: 1em;
+    font-weight: 600;
+  }
 }
 /* Movies' grid and cards */
 .programa {
@@ -65,6 +72,48 @@
     figcaption>p {
       font-style: italic;
       font-size: 0.9em
+    }
+  }
+}
+.filme {
+  background-color: black;
+  figure {
+    background: url(assets/img/baile.jpg) ;
+    background-size: cover;
+    height: 25em;
+    .glyphicon {
+      font-size: 2.5em;
+      color: #C51011;
+      vertical-align: middle;
+    }
+    figcaption {
+      color: white;
+      background: rgba(0,0,0,0.5);
+      border-radius: 2px;
+      height: 100%;
+      >div{
+        position: absolute;
+        bottom: 15px;
+        left: 0px;
+      }
+      button {
+        background: transparent;
+        border: 1px solid gray;
+      }
+      button:hover {
+        background: white
+      }
+      >h3 {
+        text-transform: uppercase;
+        font-size: 1.2em;
+        margin: 0.5em 0;
+        color: #FFBE00;
+      }
+      >p {
+        margin-top: 15px;
+      font-style: italic;
+      font-size: 0.9em
+      }
     }
   }
 }
