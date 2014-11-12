@@ -1,19 +1,21 @@
-<div ng-controller="ProgramasCtrl" class="movie-container container" ui-view>
-    <div class="col-sm-12" ng-repeat="programa in programas">
-        <article class="movie-card panel panel-default programa">
-            <header class="panel-heading" style="background: #FFBE00">
-                <h4><a ng-href="programas/{{programa.n}}">#{{programa.n}} {{programa.titulo}}</a>
-                </h4>
-            </header>
-            <figure class="panel-body">
-                <div class="col-xs-4">
-                    <img ng-src="assets/img/{{programa.thumb}}" />
-                </div>
-                <figcaption class="col-xs-8">
-                    <h3>Programa {{programa.n}}</h3>
-                    <p>{{programa.sinopse}}</p>
-                </figcaption>
-            </figure>
-        </article>
+<div ng-controller="ProgramasCtrl" class="movie-container container" >
+    <div ui-view="programas-view">
+        <div class="col-sm-12" ng-repeat="programa in programas">
+            <article class="movie-card panel panel-default programa">
+                <header class="panel-heading" style="background: #FFBE00">
+                    <h4><a ui-sref="programas.detail({ id: {{programa.n}} })">#{{programa.n}} {{programa.titulo}}</a>
+                    </h4>
+                </header>
+                <figure class="panel-body">
+                    <div class="col-xs-4">
+                        <img ng-src="assets/img/{{programa.thumb}}" />
+                    </div>
+                    <figcaption class="col-xs-8">
+                        <h3>Programa {{programa.n}}</h3>
+                        <p>{{programa.sinopse}}</p>
+                    </figcaption>
+                </figure>
+            </article>
+        </div>
     </div>
 </div>

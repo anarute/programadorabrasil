@@ -1,7 +1,5 @@
 angular.module( 'programadoraBrasil.programas', [
-  'ui.router',
-  'placeholders',
-  'ui.bootstrap'
+  'ui.router'
 ])
 
 .config(function config( $stateProvider, $urlRouterProvider) {
@@ -17,19 +15,19 @@ angular.module( 'programadoraBrasil.programas', [
       data:{ pageTitle: 'Programas' }
     })
     .state('programas.detail', {
+      parent: 'programas',
       url: '/:id',
       views: {
-        "main": {
-          // controller: function($scope, $stateParams) {
-          //   $scope.programa = $scope.programas[$stateParams.id];
-          // },
-          // loaded into ui-view of parent's template
-          templateUrl: 'programas/programas.detail.html'
+        "programas-view": {
+          controller: function() {
+            alert('yey');
+          },
+          templateUrl: 'programas/programa.tpl.html'
         }
+      },
+      onEnter: function() {
+          console.log("enter programas.detail");
       }
-      // onEnter: function() {
-      //     console.log("enter programas.detail");
-      // }
     });
 })
 
