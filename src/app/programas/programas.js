@@ -20,7 +20,7 @@ angular.module( 'programadoraBrasil.programas', [
       views: {
         "programas-view": {
           controller: function() {
-            alert('yey');
+            console.log("entrou no controller do programa detail");
           },
           templateUrl: 'programas/programa.tpl.html'
         }
