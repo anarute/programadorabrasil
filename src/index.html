@@ -4,7 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Programadora Brasil</title>
+
 	<base href="http://localhost/programadorabrasil/build/">
+
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -39,9 +41,9 @@
 	</script>
 </head>
 <body>
-	<header class="navbar main-navbar navbar-fixed-top">
+	<header class="navbar main-navbar navbar-fixed-top" role="navigation">
 		<div class="container">
-			<a class="navbar-brand col-sm-2 col-xs-6" ng-href="home"><img src="assets/img/logo.png" class="img-responsive" title="Programadora Brasil"/></a>
+			<a class="navbar-brand" href="#about"><img src="assets/img/logo.png" class="img-responsive logo" title="Programadora Brasil"/></a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a ng-href="../">Como funciona?</a></li>
@@ -61,23 +63,27 @@
 		</div>
 	</header>
 
-	<section ui-view="main"> <!-- view principal!! -->
+	<section ui-view="main" class="main-content"> <!-- view principal!! -->
+
 	</section>
 
 	<footer>
-		<div class="container">
-			<div class="col-sm-4">
-				<ul class="list list-unstyled" >
-					<li>HOME</li>
-					<li>Sobre</li>
-					<li>CATÁLOGO</li>
-					<li>Cadastro</li>
-					<li>Contato</li>
-				</ul>
-			</div>
-			<img src="assets/img/logo_cine.png" class="pull-right" />	
-		</div>
-		<br /><br />
-	</footer>
+        <div class="container">
+            <div class="col-sm-12">
+                <div class="col-sm-4">
+                    <ul class="list list-unstyled">
+                        <li>HOME</li>
+                        <li>Sobre</li>
+                        <li>CATÁLOGO</li>
+                        <li>Cadastro</li>
+                        <li>Contato</li>
+                    </ul>
+                </div>
+                <div class="pull-right">
+                	<img src="assets/img/logo_cine.png" class="logo-cinemateca" />
+                </div>
+            </div>
+    </footer>
+	<!-- <script src="http://localhost:35729/livereload.js"></script> -->
 </body>
 </html>
