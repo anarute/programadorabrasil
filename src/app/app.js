@@ -4,6 +4,7 @@ angular.module( 'programadoraBrasil', [
   'programadoraBrasil.home',
   'programadoraBrasil.about',
   'programadoraBrasil.programas',
+  'programadoraBrasil.utils.service',
   'ui.router'
 ])
 

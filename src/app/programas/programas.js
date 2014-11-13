@@ -1,10 +1,13 @@
 angular.module( 'programadoraBrasil.programas', [
-  'ui.router'
+    'ui.router'
 ])
 
 .config(function config( $stateProvider, $urlRouterProvider) {
   $stateProvider
     .state( 'programas', {
+      // With abstract set to true, that means this state can not be explicitly activated.
+      // It can only be implicitly activated by activating one of its children.
+      abstract: true,
       url: '/programas',
       views: {
         "main": {
@@ -14,19 +17,30 @@ angular.module( 'programadoraBrasil.programas', [
       },
       data:{ pageTitle: 'Programas' }
     })
+    .state( 'programas.list', {
+      url: '',
+      views: {
+        "programas-view": {
+          templateUrl: 'programas/programas.list.tpl.html'
+        }
+      },
+      onEnter: function($stateParams) {
+          console.log("entrou no programaslist");
+      }
+    })
     .state('programas.detail', {
-      parent: 'programas',
       url: '/:id',
       views: {
         "programas-view": {
-          controller: function() {
-            console.log("entrou no controller do programa detail");
-          },
+          controller: ['$scope', '$stateParams', 'utils',
+            function ( $scope, $stateParams, utils) {
+                $scope.programa = utils.findById($scope.programas, $stateParams.id);
+            }],
           templateUrl: 'programas/programa.tpl.html'
         }
       },
-      onEnter: function() {
-          console.log("enter programas.detail");
+      onEnter: function($stateParams) {
+          console.log("enter " + $stateParams.id);
       }
     });
 })

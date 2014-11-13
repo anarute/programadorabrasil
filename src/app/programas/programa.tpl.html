@@ -4,7 +4,7 @@
                 <header class="panel-heading">
                     <div class="header-content">
                         <h1>#{{programa.n}} {{programa.titulo}}</h1>
-                        <p class="lead">Baile perfumado e O homem da Mata promovem uma mistura curiosa de gêneros ao incorporarem ficção ao retrato documental.</p>
+                        <p class="lead">{{programa.sinopse}}</p>
                         <label class="duration pull-right">118 min</label>
                         <label class="age-rating pull-right">16 anos</label>
                         <label class="serie pull-right">Universo literário</label>
@@ -12,7 +12,8 @@
                 </header>
                 <section class="panel-body">
                     <div class="col-xs-3">
-                        <!-- <img class="img-responsive capa" src="img/programa.jpg" /> -->
+                        <img class="img-responsive capa" ng-src="assets/img/{{programa.thumb}}" />
+
                         <h3>Filmes do Programa #{{programa.n}}</h3>
                         <ul class="movies-list">
                             <li>Baile Perfumado de Lírio Ferreira e Paulo Caldas
