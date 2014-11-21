@@ -2,7 +2,8 @@ angular.module( 'programadoraBrasil.programas', [
     'ui.router'
 ])
 
-.config(function config( $stateProvider, $urlRouterProvider) {
+.config(function config( $uiViewScrollProvider, $stateProvider, $urlRouterProvider) {
+  $uiViewScrollProvider.useAnchorScroll(),
   $stateProvider
     .state( 'programas', {
       // With abstract set to true, that means this state can not be explicitly activated.
