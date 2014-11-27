@@ -1,5 +1,6 @@
 angular.module( 'programadoraBrasil.programas', [
-    'ui.router'
+    'ui.router',
+    'programadoraBrasil.programas.service'
 ])
 
 .config(function config( $uiViewScrollProvider, $stateProvider, $urlRouterProvider) {
@@ -12,8 +13,14 @@ angular.module( 'programadoraBrasil.programas', [
       url: '/programas',
       views: {
         "main": {
-          controller: 'ProgramasCtrl',
-          templateUrl: 'programas/programas.tpl.html'
+          templateUrl: 'programas/programas.tpl.html',
+          resolve: {
+            programas: ['programas',
+              function( programas){
+                return programas.all();
+              }]
+          },
+          controller: 'ProgramasCtrl'
         }
       },
       data:{ pageTitle: 'Programas' }
@@ -35,6 +42,10 @@ angular.module( 'programadoraBrasil.programas', [
         "programas-view": {
           controller: ['$scope', '$stateParams', 'utils',
             function ( $scope, $stateParams, utils) {
+
+                $scope.programas = programas;
+
+                console.log($scope.programas + " - id: " + $stateParams.id);
                 $scope.programa = utils.findById($scope.programas, $stateParams.id);
             }],
           templateUrl: 'programas/programa.tpl.html'
@@ -50,7 +61,8 @@ angular.module( 'programadoraBrasil.programas', [
   // This is simple a demo for UI Boostrap.
   $http.get('assets/json/programas.json').
     success(function(data, status, headers, config) {
-      $scope.programas = data.programas;
+      programas = data.programas;
+      $scope.programas = programas;
     }).
     error(function(data, status, headers, config) {
       // log error

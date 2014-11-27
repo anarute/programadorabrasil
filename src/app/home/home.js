@@ -14,7 +14,8 @@
  */
 angular.module( 'programadoraBrasil.home', [
   'ui.router',
-  'plusOne'
+  'plusOne',
+  'programadoraBrasil.programas.service'
 ])
 
 /**
@@ -41,7 +42,8 @@ angular.module( 'programadoraBrasil.home', [
 .controller( 'homeCtrl', function HomeController( $scope, $http) {
   $http.get('assets/json/programas.json').
     success(function(data, status, headers, config) {
-      $scope.programas = data.programas;
+      programas = data.programas;
+      $scope.programas = programas;
     }).
     error(function(data, status, headers, config) {
       // log error
