@@ -25,20 +25,29 @@
   }
 }
 .single-movie-container{
-  .movie-card .panel-heading:before {
-      background: url(../img/baile.jpg);
+  .panel-heading{
+    overflow: hidden;
+    position: relative;
+    .programa-cover {
       background-size: cover;
       -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-    filter: blur(3px);
-    height: 100%;
-    width: 100%;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
+      -moz-filter: blur(3px);
+      -o-filter: blur(3px);
+      -ms-filter: blur(3px);
+      filter: blur(3px);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .header-content{
+      position: relative;
+      color: #FFF;
+      text-shadow: 2px 2px 1px rgba(50, 50, 50, 0.8);
+      background-color: rgba(0,0,0,0.3);
+      padding: 5px;
+    }
   }
 }
 .age-rating, .serie, .duration{

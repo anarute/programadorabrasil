@@ -45,8 +45,12 @@ angular.module( 'programadoraBrasil.programas', [
 
                 $scope.programas = programas;
 
-                console.log($scope.programas + " - id: " + $stateParams.id);
+                // console.log($scope.programas + " - id: " + $stateParams.id);
                 $scope.programa = utils.findById($scope.programas, $stateParams.id);
+
+                $scope.capa = "assets/img/" + $scope.programa.img;
+
+                console.log($scope.capa);
             }],
           templateUrl: 'programas/programa.tpl.html'
         }
