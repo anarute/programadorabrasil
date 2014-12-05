@@ -40,6 +40,7 @@ angular.module( 'programadoraBrasil.programas', [
       url: '/:id',
       views: {
         "programas-view": {
+          /*
           controller: ['$scope', '$stateParams', 'utils',
             function ( $scope, $stateParams, utils) {
 
@@ -51,6 +52,19 @@ angular.module( 'programadoraBrasil.programas', [
                 $scope.capa = "assets/img/" + $scope.programa.img;
 
                 console.log($scope.capa);
+            }], */
+            controller: ['$scope', '$stateParams', 'utils', '$http',
+              function ( $scope, $stateParams, utils, $http) {
+                $http.get('assets/json/programas.json').
+                  success(function(data, status, headers, config) {
+                  programas = data.programas;
+                  $scope.programas = programas;
+                  $scope.programa = utils.findById($scope.programas, $stateParams.id);
+                  $scope.capa = "assets/img/" + $scope.programa.img;
+                  }).
+                  error(function(data, status, headers, config) {
+                    // log error
+                });
             }],
           templateUrl: 'programas/programa.tpl.html'
         }
