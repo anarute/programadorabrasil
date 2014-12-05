@@ -28,7 +28,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- google webfonts -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+	<link href='assets/type/type.css' rel='stylesheet' type='text/css'>
 	<!-- compiled CSS --><% styles.forEach( function ( file ) { %>
 	<link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
 	<!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
@@ -46,9 +46,6 @@
 			<a class="navbar-brand" href="home"><img src="assets/img/logo.png" class="img-responsive logo" title="Programadora Brasil"/></a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a ng-href="../">Como funciona?</a></li>
-					<li><a ng-href="../">História</a></li>
-					<li><a ng-href="../">Revista</a></li>
 					<li><a ng-href="programas">Catálogo</a></li>
 					<li><a ng-href="about">Cadastro</a></li>
 					<li><a ng-href="../">Login</a></li>
@@ -72,15 +69,16 @@
             <div class="col-sm-12">
                 <div class="col-sm-4">
                     <ul class="list list-unstyled">
-                        <li>HOME</li>
-                        <li>Sobre</li>
-                        <li>CATÁLOGO</li>
+                        <li>Home</li>
+                        <li>Catálogo</li>
                         <li>Cadastro</li>
                         <li>Contato</li>
+                        <li>Mapa do site</li>
                     </ul>
                 </div>
                 <div class="pull-right">
-                	<img src="assets/img/logo_cine.png" class="logo-cinemateca" />
+                	<img src="assets/img/logos_gov.png" style="margin: 0 2em"  class="logos" />
+                	<img src="assets/img/logo_cine.png" class="logos" />
                 </div>
             </div>
     </footer>
