@@ -1,4 +1,5 @@
 <div class="col-sm-6 programa-list" ng-repeat="programa in programas">
+<div class="col-sm-6 programa-list" ng-repeat="programa in programas | filter:searchText">
     <article class="movie-card panel panel-default">
         <header class="panel-heading" style="background: #FFBE00">
             <h4><a ui-sref="programas.detail({ id: {{programa.n}} })">#{{programa.n}} {{programa.titulo}}</a>
