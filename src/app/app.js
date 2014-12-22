@@ -5,6 +5,8 @@ angular.module( 'programadoraBrasil', [
   'programadoraBrasil.about',
   'programadoraBrasil.programas',
   'programadoraBrasil.programas.service',
+  'programadoraBrasil.filmes',
+  'programadoraBrasil.filmes.service',
   'programadoraBrasil.utils.service',
   'ui.router'
 ])
