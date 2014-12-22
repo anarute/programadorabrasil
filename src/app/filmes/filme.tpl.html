@@ -1,0 +1,75 @@
+<div class="single-movie-container container">
+    <div class="col-sm-12">
+        <div class="movie-card panel panel-default">
+            <header class="panel-heading">
+                <div class="filme-cover" ng-style="{'background-image': 'url(' + capa + ')'}"></div>
+                <div class="header-content">
+                    <h1>#{{filme.id}} {{filme.titulo}}</h1>
+                    <label class="tag" ng-show="filme.duracao != null">{{filme.duracao}} min</label>
+                    <label class="tag" ng-show="filme.classificacao != null">{{filme.classificacao}}</label>
+                    <label class="tag" ng-show="filme.genero != null">Universo literário</label>
+                </div>
+            </header>
+            <section class="panel-body">
+                <div class="col-xs-3">
+                    <img class="img-responsive capa" ng-src="assets/img/{{filme.thumb}}" />
+                    <ul>
+                        <li>Produtora {{ filme.produtora }}</li>
+                        <li>Co-produtora {{ filme.co_produtora }}</li>
+                    </ul>
+                </div>
+                <div class="col-xs-9">
+                    <blockquote>
+                        {{filme.sinopse}}
+                    </blockquote>
+                    <div class="ficha-tecnica">
+                        <h2>
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            Ficha técnica
+                        </h2>
+                        <ul>
+                            <li>Elenco: {{ filme.elenco }} </li>
+                            <li>Direção de fotografia: {{ filme.dir_fotografia }} </li>
+                            <li>Montagem/edição: {{ filme.montagem_edicao }} </li>
+                            <li>Roteiro: {{ filme.roteiro }} </li>
+                            <li>Assistente de direção: {{ filme.assistente_direcao }} </li>
+                            <li>Operador(a) de câmera: {{ filme.operador_camera }} </li>
+                            <li>Assistente de câmera: {{ filme.assistente_camera }} </li>
+                            <li>Produção executiva: {{ filme.producao_executiva }} </li>
+                            <li>Direção de atores: {{ filme.dir_atores }} </li>
+                            <li>Direção de produção: {{ filme.dir_producao }} </li>
+                            <li>Direção de arte: {{ filme.dir_arte }} </li>
+                            <li>Fotografia: {{ filme.cenografia }} </li>
+                            <li>Figurino: {{ filme.figurino }} </li>
+                            <li>Sound designer: {{ filme.sound_designer }} </li>
+                            <li>Técnico(a) de som: {{ filme.tec_som }} </li>
+                            <li>Continuista: {{ filme.continuista }} </li>
+                            <li>Produção: {{ filme.producao }} </li>
+                            <li>Coordenação de produção: {{ filme.coord_producao }} </li>
+                            <li>Assistente de produção: {{ filme.assistente_producao }} </li>
+                            <li>Foquista: {{ filme.foquista }} </li>
+                            <li>Iluminação: {{ filme.iluminador }} </li>
+                            <li>Assistente de iluminação: {{ filme.assistente_iluminacao }} </li>
+                            <li>Eletricista: {{ filme.eletricista }} </li>
+                            <li>Maquinista: {{ filme.maquinista }} </li>
+                            <li>Estúdio de montagem: {{ filme.estudio_montagem_edicao }} </li>
+                            <li>Produção de arte: {{ filme.producao_arte }} </li>
+                            <li>Maquiagem: {{ filme.maquiagem }} </li>
+                            <li>Cabeleleiro(a): {{ filme.cabeleireiro }} </li>
+                            <li>Microfonista: {{ filme.microfonista }} </li>
+                            <li>Edição de som: {{ filme.edicao_som }} </li>
+                            <li>Mixagem: {{ filme.mixagem }} </li>
+                            <li>Trilha: {{ filme.autor_da_trilha }} </li>
+                        </ul>
+                    </div>
+                    <div id="premios" ng-show="filme.premios != null">
+                        <h2><span class="glyphicon glyphicon-certificate"></span> Prêmios</h2>
+                        <p>
+                            {{ filme.premios }}
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
