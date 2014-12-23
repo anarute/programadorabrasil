@@ -1,98 +1,110 @@
 <div ng-controller="homeCtrl" class="home">
 
-	<header class="main container">
-		<p style="text-align: center; font-size: 1.3em; color: #666; margin: 0px 0px 2em;">Bem vindo ao site da Programadora Brasil! <a href="#">Faça o login</a> ou cadastre-se em uma das categorias abaixo:</p>
-		<div class="row">
-			<div class="col-sm-4">
-				<figure class="cta-home">
-					<header><a ui-sref="programas.list">Usuário</a></header>
-					<figcaption>						
-						Pessoas físicas
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-sm-4">
-				<figure class="cta-home">
-					<header><a ng-href="#">Exibidor</a></header>
-					<figcaption>
-						Cineclubes, prefeituras, centros culturais etc.
-					</figcaption>
-				</figure>
-			</div>
-			<div class="col-sm-4">
-				<figure class="cta-home">
-					<header><a ng-href="#">Realizador</a></header>
-					<figcaption>
-						Cineastas, produtores, diretores
-					</figcaption>
-				</figure>
-			</div>
-		</div>
-	</header>
-	<div class="content">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<p style="font-size: 1.5em; margin: 1em; font-weight: 300">Desde 2007, a Programadora Brasil, programa da Secretaria do Audiovisual do Ministério da Cultura, realizado pela Sociedade Amigos da Cinemateca, lança, em DVDs, um conjunto de filmes brasileiros licenciados para sessões sem fins lucrativos em pontos associados à iniciativa</p>
-				</div>
-				<section class="col-sm-4">
-					<hr class="col-sm-12" />
-					<header>
-						<h2>AGENDA</h2>
-					</header>
-					<hr class="dotted" />
-					<table class="table table-striped table-responsive">
-						<thead>
-							<tr>
-								<th>Dia/Mês</th>
-								<th>Cidade - UF</th>
-								<th>Tipo</th>
-								<th style="white-space: nowrap">Nome do evento</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>01/09</td>
-								<td>São José dos Campos - SP</td>
-								<td>Exibição</td>
-								<td>Festival Jeca 2014</td>
-							</tr>
-							<tr>
-								<td>04/09</td>
-								<td>Jacareí - SP</td>
-								<td>Exibição</td>
-								<td>Fapija 2014</td>
-							</tr>
-							<tr>
-								<td>06/09</td>
-								<td>Taubaté - SP</td>
-								<td>Exibição</td>
-								<td>Festival Mazaroppi 2014</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-				<section class="col-sm-4">
-					<hr class="col-sm-12" />
-					<header>
-						<h2>Novidades</h2>
-					</header>
-					<hr class="dotted" />
-					<article>
-						<h3>Lançamento do site novo</h3>
-						<p>Desde 2007, a Programadora Brasil vem tentando fazer um site bom (
-							<small>
+    <header class="main container">
+        <p style="text-align: center; font-size: 1.3em; color: #666; margin: 0px 0px 2em;">Bem vindo ao site da Programadora Brasil! <a href="#">Faça o login</a> ou cadastre-se em uma das categorias abaixo:</p>
+        <div class="row">
+            <div class="col-sm-4">
+                <figure class="cta-home">
+                    <header><a ui-sref="programas.list">Usuário</a>
+                    </header>
+                    <div class="icon-home">
+                        <img src="assets/img/usuario.png" />
+                    </div>
+                    <figcaption>
+                        Pessoas físicas
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-4">
+                <figure class="cta-home">
+                    <header><a ng-href="#">Exibidor</a>
+                    </header>
+                    <div class="icon-home">
+                        <img src="assets/img/exibidor.png" />
+                    </div>
+                    <figcaption>
+                        Cineclubes, prefeituras, centros culturais etc.
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-sm-4">
+                <figure class="cta-home">
+                    <header><a ng-href="#">Realizador</a>
+                    </header>
+                    <div class="icon-home">
+                        <img src="assets/img/realizador.png" />
+                    </div>
+                    <figcaption>
+                        Cineastas, produtores, diretores
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <p style="font-size: 1.5em; margin: 1em; font-weight: 300">Desde 2007, a Programadora Brasil, programa da Secretaria do Audiovisual do Ministério da Cultura, realizado pela Sociedade Amigos da Cinemateca, lança, em DVDs, um conjunto de filmes brasileiros licenciados para sessões sem fins lucrativos em pontos associados à iniciativa</p>
+                </div>
+                <section class="col-sm-4">
+                    <hr class="col-sm-12" />
+                    <header>
+                        <h2>AGENDA</h2>
+                    </header>
+                    <hr class="dotted" />
+                    <table class="table table-striped table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Dia/Mês</th>
+                                <th>Cidade - UF</th>
+                                <th>Tipo</th>
+                                <th style="white-space: nowrap">Nome do evento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01/09</td>
+                                <td>São José dos Campos - SP</td>
+                                <td>Exibição</td>
+                                <td>Festival Jeca 2014</td>
+                            </tr>
+                            <tr>
+                                <td>04/09</td>
+                                <td>Jacareí - SP</td>
+                                <td>Exibição</td>
+                                <td>Fapija 2014</td>
+                            </tr>
+                            <tr>
+                                <td>06/09</td>
+                                <td>Taubaté - SP</td>
+                                <td>Exibição</td>
+                                <td>Festival Mazaroppi 2014</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section class="col-sm-4">
+                    <hr class="col-sm-12" />
+                    <header>
+                        <h2>Novidades</h2>
+                    </header>
+                    <hr class="dotted" />
+                    <article>
+                        <h3>Lançamento do site novo</h3>
+                        <p>Desde 2007, a Programadora Brasil vem tentando fazer um site bom (
+                            <small>
 								<em>Leia mais...</em>
 							</small>)</p>
-					</article>
-					<hr class="dotted" />
-					<article>
-						<h3>Lançamento do site novo</h3>
-						<p>Desde 2007, a Programadora Brasil vem tentando fazer um site bom (
-							<small>
+                    </article>
+                    <hr class="dotted" />
+                    <article>
+                        <h3>Lançamento do site novo</h3>
+                        <p>Desde 2007, a Programadora Brasil vem tentando fazer um site bom (
+                            <small>
 								<em>Leia mais...</em>
 							</small>)</p>
-					</article>
+                    </article>
 
 				</section>
 			</div>
