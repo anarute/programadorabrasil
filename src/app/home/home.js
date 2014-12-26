@@ -40,14 +40,22 @@ angular.module( 'programadoraBrasil.home', [
  * And of course we define a controller for our route.
  */
 .controller( 'homeCtrl', function HomeController( $scope, $http) {
-  $http.get('assets/json/programas.json').
+  $http.get('http://www.programadorabrasil.gov.br/pb_api/programa/?format=json').
     success(function(data, status, headers, config) {
-      programas = data.programas;
+      programas = data.results;
       $scope.programas = programas;
     }).
     error(function(data, status, headers, config) {
-      // log error
+      console.log("home pau no json");
     });
+  $http.get('http://www.programadorabrasil.gov.br/pb_api/filme/?format=json').
+  success(function(data, status, headers, config) {
+    filmes = data.results;
+    $scope.filmes = filmes;
+  }).
+  error(function(data, status, headers, config) {
+    console.log("home pau no json");
+  });
 })
 ;
 

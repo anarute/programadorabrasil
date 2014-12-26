@@ -106,53 +106,56 @@
 							</small>)</p>
                     </article>
 
-				</section>
-			</div>
-			<hr />
-			<section class="col-sm-8">
-				<header>
-					<h2>Últimos Filmes</h2>
-				</header>
-				<div class="col-sm-12" ng-repeat="programa in programas | limitTo:3">
-					<article class="movie-card panel panel-default filme">
-						<header class="panel-heading" style="background: #FFBE00">
-							<h4>#{{programa.n}} {{programa.titulo}}</h4>
-						</header>
-						<figure class="panel-body" style="background-image: url(assets/img/{{programa.img}})">
-							<figcaption class="col-xs-4 pull-right">
-								<p>{{programa.sinopse}}</p>
-								<div class="col-xs-12 text-center pull-right">
-									<button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-play-circle"></i>
-										<small>Assistir trecho</small>
-									</button>
-									<button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-list-alt"></i>
-										<small>Ficha técnica</small>
-									</button>
-								</div>
-							</figcaption>
-						</figure>
-					</article>
-				</div>
-			</section>
-			<section class="col-sm-4">
-				<header>
-					<h2><a ng-href="programas">Últimos Programas</a></h2>
-				</header>
-				<div class="col-sm-12" ng-repeat="programa in programas">
-					<article class="movie-card panel panel-default programa">
-						<header class="panel-heading" style="background: #FFBE00">
-							<h4><a ui-sref="programas.detail({ id: {{programa.n}} })">#{{programa.n}} {{programa.titulo}}</a></h4>
-						</header>
-						<figure class="panel-body">
-							<img class="col-xs-4" ng-src="assets/img/{{programa.thumb}}" />
-							<figcaption class="col-xs-8">
-								<h3>Programa {{programa.n}}</h3>
-								<p>{{programa.sinopse}}</p>
-							</figcaption>
-						</figure>
-					</article>
-				</div>
-			</section>
-		</div>
-	</div>
+                </section>
+            </div>
+            <hr />
+            <section class="col-sm-8">
+                <header>
+                    <h2>Últimos Filmes</h2>
+                </header>
+                <div class="col-sm-12" ng-repeat="filme in filmes | limitTo:3">
+                    <article class="movie-card panel panel-default filme">
+                        <header class="panel-heading" style="background: #FFBE00">
+                            <h4><a ui-sref="filmes.detail({ id: {{filme.id}} })">{{filme.titulo}}</a></h4>
+                        </header>
+                        <figure class="panel-body" style="background-image: url(assets/img/{{filme.img}})">
+                            <figcaption class="col-xs-4 pull-right">
+                                <p>{{ filme.sinopse | limitTo:400 }}</p>
+                                <div class="col-xs-12 text-center pull-right">
+                                    <button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-play-circle"></i>
+                                        <small>Assistir trecho</small>
+                                    </button>
+                                    <button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-list-alt"></i>
+                                        <small>Ficha técnica</small>
+                                    </button>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </section>
+            <section class="col-sm-4">
+                <header>
+                    <h2><a ng-href="programas">Últimos Programas</a></h2>
+                </header>
+                <div class="col-sm-12" ng-repeat="programa in programas | limitTo:5">
+                    <article class="movie-card panel panel-default programa">
+                        <header class="panel-heading" style="background: #FFBE00">
+                            <h4><a ui-sref="programas.detail({ id: {{programa.id}} })">#{{programa.id}} {{programa.titulo}}</a></h4>
+                        </header>
+                        <figure class="panel-body">
+                            <img class="col-xs-4" ng-src="assets/img/{{programa.thumb}}" />
+                            <figcaption class="col-xs-8">
+                                <h3>Programa {{programa.id}}</h3>
+                                <p>{{programa.sinopse}}</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+                <div class="col-sm-12 text-right">
+                    <a ng-href="programas">Ver todos &#187;</a>
+                </div>
+            </section>
+        </div>
+    </div>
 </div>
