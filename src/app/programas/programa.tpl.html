@@ -2,26 +2,27 @@
         <div class="col-sm-12">
             <div class="movie-card panel panel-default">
                 <header class="panel-heading">
-                    <div class="programa-cover" ng-style="{'background-image': 'url(' + capa + ')'}"></div>
+                    <!-- <div class="programa-cover" ng-style="{'background-image': 'url(' + capa + ')'}"></div> -->
+                    <div class="programa-cover"></div>
                     <div class="header-content">
-                        <h1>#{{programa.n}} {{programa.titulo}}</h1>
-                        <p class="lead">{{programa.sinopse}}</p>
-                        <label class="duration">118 min</label>
-                        <label class="age-rating">16 anos</label>
-                        <label class="serie">Universo literário</label>
+                        <h1>#{{programa.id}} {{programa.titulo}}</h1>
+                        <label class="tag" ng-show="programa.duracao != null">{{programa.duracao}} min</label>
+                        <label class="tag" ng-show="programa.faixa_etaria != null">{{programa.faixa_etaria}}</label>
+                        <label class="tag" ng-show="programa.duracao != null">{{programa.duracao}}</label>
+                        <label class="pull-right available" ng-if="programa.quantidade_total > 0">
+                            Disponível
+                        </label>
                     </div>
                 </header>
                 <section class="panel-body">
                     <div class="col-xs-3">
-                        <img class="img-responsive capa" ng-src="assets/img/{{programa.thumb}}" />
+                        <!-- <img class="img-responsive capa" ng-src="assets/img/{{programa.thumb}}" /> -->
+                        <img class="img-responsive capa" ng-src="assets/img/programa.jpg" />
 
-                        <h3>Filmes do Programa #{{programa.n}}</h3>
+                        <h3>Filmes do Programa #{{programa.id}}</h3>
                         <ul class="movies-list">
-                            <li>Baile Perfumado de Lírio Ferreira e Paulo Caldas
-                                <span>PE, 1998, Ficção, Colorido/PB, 93 min.</span>
-                            </li>
-                            <li>O Homem da Mata de Antonio Luiz Carrilho
-                                <span>PE, 2004, Ficção, PB, 18 min.</span>
+                            <li ng-repeat="filme in programa.filmes">
+                                <a ui-sref="filmes.detail({ id: {{filme.filme_id}} })">{{filme.filme_id}}</a>, de <span ng-repeat="diretor in filme.diretores">{{diretor.nome}} </span>
                             </li>
                         </ul>
                     </div>
@@ -30,13 +31,12 @@
                             <img src="assets/img/vodplaceholder.jpg" class="img-responsive center-block" />
                         </div>
                         <p>
-                            O filme questiona se ainda há espaço para a arte num mundo dominado pelo consumismo e pela competitividade vil. Os personagens principais são os poetas Torres (Bertrand Duarte) e Xavier (Jandir Ferrari) inspirados respectivamente em Augusto dos Anjos e Cesário Verde. Torres e Xavier lançam um livro de poesia numa pastelaria do centro da cidade. A região conhecida como "Boca do Lixo" exerce um fascínio irresistível sobre o diretor Carlos Reichenbach, que busca aproximar-se de espaços marginalizados, pois lá residiria a alma da cidade, apesar da degradação aparente. Reichenbach cria diversos cortes temporais durante o filme, retrata a infância dos personagens no início dos anos 1960, mostra os conflitos ideológicos durante o regime militar e critica tanto a violência dos donos do poder quanto a fé cega em discursos tirados das cartilhas de Karl Marx, Stalin, Mao e outros.
+                            {{programa.descricao}}
                         </p>
                         <blockquote class="review">
-                            <h2>Almas que dançam</h2>
-                            <p>
-                                Legítimo representante do cinema de poesia brasileiro. Alma Corsária narra duas histórias ao mesmo tempo: a primeira, relativamente linear, conta a evolução da amizade entre Xavier e Torres de 1957 a 1994; a segunda, mais indisciplinada, estende uma tapeçaria de referências pessoais e culturais de Carlos Reichenbach, sem obedecer a qualquer regra que não seja a da afetividade. O espectador disposto a fazer essa dupla viagem encontra um dos filmes mais belos e criativos do diretor paulista.
-                            </p>
+                            <div>
+                                {{programa.critica}}
+                            </div>
                         </blockquote>
                     </div>
                 </section>

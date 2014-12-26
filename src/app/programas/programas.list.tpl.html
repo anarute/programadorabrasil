@@ -1,17 +1,19 @@
-<div class="col-sm-6 programa-list" ng-repeat="programa in programas">
+<div ng-show="nextprograma != null"> {{ nextprograma }}</div>
+
 <div class="col-sm-6 programa-list" ng-repeat="programa in programas | filter:searchText">
     <article class="movie-card panel panel-default">
         <header class="panel-heading" style="background: #FFBE00">
-            <h4><a ui-sref="programas.detail({ id: {{programa.n}} })">#{{programa.n}} {{programa.titulo}}</a>
+            <h4><a ui-sref="programas.detail({ id: {{programa.id}} })">#{{programa.id}} {{programa.titulo}}</a>
             </h4>
         </header>
         <figure class="panel-body">
             <div class="col-xs-4">
-                <img ng-src="assets/img/{{programa.thumb}}" />
+                <!-- <img ng-src="assets/img/{{programa.thumb}}" /> -->
+                <img src="assets/img/programa.jpg" />
             </div>
             <figcaption class="col-xs-8">
-                <h3>Programa {{programa.n}}</h3>
-                <p>{{programa.sinopse}}</p>
+                <h3>Programa {{programa.id}}</h3>
+                <p>{{ programa.descricao | limitTo : 200 }} [...] </p>
             </figcaption>
         </figure>
     </article>
