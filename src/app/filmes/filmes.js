@@ -47,7 +47,8 @@ angular.module( 'programadoraBrasil.filmes', [
                 $http.get('http://www.programadorabrasil.gov.br/pb_api/filme/'+ $stateParams.id +'/?format=json').
                   success(function(data, status, headers, config) {
                   $scope.filme = data;
-                  $scope.capa = "assets/img/" + $scope.filme.img;
+                  $scope.capa = "media/imgs/filmes/" + $scope.filme.imagens[1].url;
+                  console.log($scope.capa);
                   }).
                   error(function(data, status, headers, config) {
                     // log error
