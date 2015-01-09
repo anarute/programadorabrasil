@@ -118,7 +118,7 @@
                         <header class="panel-heading" style="background: #FFBE00">
                             <h4><a ui-sref="filmes.detail({ id: {{filme.id}} })">{{filme.titulo}}</a></h4>
                         </header>
-                        <figure class="panel-body" style="background-image: url(../media/imgs/filmes/{{filme.img}})">
+                        <figure class="panel-body" ng-style="{'background-image': 'url( http://programadorabrasil.gov.br/media/imgs/filmes/{{filme.imagens[1].url}} )'}">
                             <figcaption class="col-xs-4 pull-right">
                                 <p>{{ filme.sinopse | limitTo:400 }}</p>
                                 <div class="col-xs-12 text-center pull-right">
@@ -144,7 +144,9 @@
                             <h4><a ui-sref="programas.detail({ id: {{programa.id}} })">#{{programa.id}} {{programa.titulo}}</a></h4>
                         </header>
                         <figure class="panel-body">
-                            <img class="col-xs-4" ng-src="http://programadorabrasil.gov.br/media/imgs/programas/{{programa.imagens[0].url}}" />
+                            <div class="col-xs-4">
+                                <img class="img-responsive" ng-src="http://programadorabrasil.gov.br/media/imgs/programas/{{programa.imagens[0].url}}" />
+                            </div>
                             <figcaption class="col-xs-8">
                                 <h3>Programa {{programa.id}}</h3>
                                 <p>{{programa.sinopse}}</p>
