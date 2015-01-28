@@ -55,9 +55,9 @@ angular.module( 'programadoraBrasil.programas', [
             }], */
             controller: ['$scope', '$stateParams', 'utils', '$http',
               function ( $scope, $stateParams, utils, $http) {
-                $http.get('assets/json/programas.json').
+                $http.get('http://www.programadorabrasil.gov.br/pb_api/programa/?format=json').
                   success(function(data, status, headers, config) {
-                  programas = data.programas;
+                  programas = data.results;
                   $scope.programas = programas;
                   $scope.programa = utils.findById($scope.programas, $stateParams.id);
                   $scope.capa = "assets/img/" + $scope.programa.img;
@@ -75,15 +75,18 @@ angular.module( 'programadoraBrasil.programas', [
     });
 })
 
-.controller( 'ProgramasCtrl', function ProgramasCtrl( $scope, $http ) {
+.controller( 'ProgramasCtrl', function ProgramasCtrl( $scope, $http, $stateParams) {
   // This is simple a demo for UI Boostrap.
-  $http.get('assets/json/programas.json').
+
+  console.log("stateparams:" + $scope.nextprograma);
+  $http.get('http://www.programadorabrasil.gov.br/pb_api/programa/?format=json').
     success(function(data, status, headers, config) {
-      programas = data.programas;
+      programas = data.results;
       $scope.programas = programas;
+      $scope.nextprograma = data.next;
     }).
     error(function(data, status, headers, config) {
-      // log error
+      console.log("pau json");
     });
 })
 

@@ -4,9 +4,9 @@ angular.module( 'programadoraBrasil.programas.service' , [
 
 // A RESTful factory for retrieving programas from 'programas.json'
 .factory('programas', ['$http', 'utils', function ($http, utils) {
-  var path = 'assets/json/programas.json';
+  var path = 'http://www.programadorabrasil.gov.br/pb_api/programa/?format=json';
   var programas = $http.get(path).then(function (resp) {
-    return resp.data.programas;
+    return resp.data.results;
   });
 
   var factory = {};

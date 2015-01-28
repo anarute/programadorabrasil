@@ -44,10 +44,11 @@ angular.module( 'programadoraBrasil.filmes', [
             }], */
             controller: ['$scope', '$stateParams', 'utils', '$http',
               function ( $scope, $stateParams, utils, $http) {
-                $http.get('http://localhost:8000/filme/'+ $stateParams.id +'/?format=json').
+                $http.get('http://www.programadorabrasil.gov.br/pb_api/filme/'+ $stateParams.id +'/?format=json').
                   success(function(data, status, headers, config) {
                   $scope.filme = data;
-                  $scope.capa = "assets/img/" + $scope.filme.img;
+                  $scope.capa = "media/imgs/filmes/" + $scope.filme.imagens[1].url;
+                  console.log($scope.capa);
                   }).
                   error(function(data, status, headers, config) {
                     // log error
@@ -64,7 +65,7 @@ angular.module( 'programadoraBrasil.filmes', [
 
 .controller( 'filmesCtrl', function filmesCtrl( $scope, $http ) {
   // This is simple a demo for UI Boostrap.
-  $http.get('http://localhost:8000/filme/?format=json').
+  $http.get('http://www.programadorabrasil.gov.br/pb_api/filme/?format=json').
     success(function(data, status, headers, config) {
       filmes = data.filmes;
       $scope.filmes = filmes;

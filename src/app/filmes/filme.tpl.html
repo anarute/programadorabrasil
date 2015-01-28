@@ -1,7 +1,7 @@
 <div class="single-movie-container container">
     <div class="col-sm-12">
         <div class="movie-card panel panel-default">
-            <header class="panel-heading">
+            <header class="panel-heading" ng-style="{'background-image': 'url(' + capa + ')'}">
                 <div class="filme-cover" ng-style="{'background-image': 'url(' + capa + ')'}"></div>
                 <div class="header-content">
                     <h1>#{{filme.id}} {{filme.titulo}}</h1>
@@ -12,7 +12,7 @@
             </header>
             <section class="panel-body">
                 <div class="col-xs-3">
-                    <img class="img-responsive capa" ng-src="assets/img/{{filme.thumb}}" />
+                    <img class="img-responsive capa" ng-src="http://programadorabrasil.gov.br/media/imgs/filmes/{{filme.imagens[0].url}}" />
                     <ul>
                         <li>Produtora {{ filme.produtora }}</li>
                         <li>Co-produtora {{ filme.co_produtora }}</li>
@@ -62,7 +62,7 @@
                             <li>Trilha: {{ filme.autor_da_trilha }} </li>
                         </ul>
                     </div>
-                    <div id="premios" ng-show="filme.premios != null">
+                    <div id="premios" ng-show="filme.premios != ''">
                         <h2><span class="glyphicon glyphicon-certificate"></span> Prêmios</h2>
                         <p>
                             {{ filme.premios }}

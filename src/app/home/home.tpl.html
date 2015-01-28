@@ -1,8 +1,9 @@
 <div ng-controller="homeCtrl" class="home">
 
-    <header class="main container">
+    <header class="main container ">
+    <div style="position: absolute; top: 7em; z-index: -1" parallax>
         <p style="text-align: center; font-size: 1.3em; color: #666; margin: 0px 0px 2em;">Bem vindo ao site da Programadora Brasil! <a href="#">Faça o login</a> ou cadastre-se em uma das categorias abaixo:</p>
-        <div class="row">
+        <div class="col-sm-12">
             <div class="col-sm-4">
                 <figure class="cta-home">
                     <header><a ui-sref="programas.list">Usuário</a>
@@ -40,8 +41,12 @@
                 </figure>
             </div>
         </div>
+    </div>
     </header>
-    <div class="content">
+    <div class="content" style="
+    margin-top: 30em;
+  z-index: 10;
+">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
@@ -106,53 +111,58 @@
 							</small>)</p>
                     </article>
 
-				</section>
-			</div>
-			<hr />
-			<section class="col-sm-8">
-				<header>
-					<h2>Últimos Filmes</h2>
-				</header>
-				<div class="col-sm-12" ng-repeat="programa in programas | limitTo:3">
-					<article class="movie-card panel panel-default filme">
-						<header class="panel-heading" style="background: #FFBE00">
-							<h4>#{{programa.n}} {{programa.titulo}}</h4>
-						</header>
-						<figure class="panel-body" style="background-image: url(assets/img/{{programa.img}})">
-							<figcaption class="col-xs-4 pull-right">
-								<p>{{programa.sinopse}}</p>
-								<div class="col-xs-12 text-center pull-right">
-									<button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-play-circle"></i>
-										<small>Assistir trecho</small>
-									</button>
-									<button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-list-alt"></i>
-										<small>Ficha técnica</small>
-									</button>
-								</div>
-							</figcaption>
-						</figure>
-					</article>
-				</div>
-			</section>
-			<section class="col-sm-4">
-				<header>
-					<h2><a ng-href="programas">Últimos Programas</a></h2>
-				</header>
-				<div class="col-sm-12" ng-repeat="programa in programas">
-					<article class="movie-card panel panel-default programa">
-						<header class="panel-heading" style="background: #FFBE00">
-							<h4><a ui-sref="programas.detail({ id: {{programa.n}} })">#{{programa.n}} {{programa.titulo}}</a></h4>
-						</header>
-						<figure class="panel-body">
-							<img class="col-xs-4" ng-src="assets/img/{{programa.thumb}}" />
-							<figcaption class="col-xs-8">
-								<h3>Programa {{programa.n}}</h3>
-								<p>{{programa.sinopse}}</p>
-							</figcaption>
-						</figure>
-					</article>
-				</div>
-			</section>
-		</div>
-	</div>
+                </section>
+            </div>
+            <hr />
+            <section class="col-sm-8">
+                <header>
+                    <h2>Últimos Filmes</h2>
+                </header>
+                <div class="col-sm-12" ng-repeat="filme in filmes | limitTo:3">
+                    <article class="movie-card panel panel-default filme">
+                        <header class="panel-heading" style="background: #FFBE00">
+                            <h4><a ui-sref="filmes.detail({ id: {{filme.id}} })">{{filme.titulo}}</a></h4>
+                        </header>
+                        <figure class="panel-body" ng-style="{'background-image': 'url( http://programadorabrasil.gov.br/media/imgs/filmes/{{filme.imagens[1].url}} )'}">
+                            <figcaption class="col-xs-4 pull-right">
+                                <p>{{ filme.sinopse | limitTo:400 }}</p>
+                                <div class="col-xs-12 text-center pull-right">
+                                    <button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-play-circle"></i>
+                                        <small>Assistir trecho</small>
+                                    </button>
+                                    <button class="btn btn-block btn-sm"><i class="glyphicon glyphicon-list-alt"></i>
+                                        <small>Ficha técnica</small>
+                                    </button>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </section>
+            <section class="col-sm-4">
+                <header>
+                    <h2><a ng-href="programas">Últimos Programas</a></h2>
+                </header>
+                <div class="col-sm-12" ng-repeat="programa in programas | limitTo:5">
+                    <article class="movie-card panel panel-default programa">
+                        <header class="panel-heading" style="background: #FFBE00">
+                            <h4><a ui-sref="programas.detail({ id: {{programa.id}} })">#{{programa.id}} {{programa.titulo}}</a></h4>
+                        </header>
+                        <figure class="panel-body">
+                            <div class="col-xs-4">
+                                <img class="img-responsive" ng-src="http://programadorabrasil.gov.br/media/imgs/programas/{{programa.imagens[0].url}}" />
+                            </div>
+                            <figcaption class="col-xs-8">
+                                <h3>Programa {{programa.id}}</h3>
+                                <p>{{sinopse(programa.descricao)}}</p>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+                <div class="col-sm-12 text-right">
+                    <a ng-href="programas">Ver todos &#187;</a>
+                </div>
+            </section>
+        </div>
+    </div>
 </div>
