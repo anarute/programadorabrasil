@@ -31,8 +31,6 @@
   }
 }
 .content {
-  background-color: #F1EDE1;
-  margin-top: 3em;
   hr {
     margin: 1.5em 0 1em 0 !important;
     border-top:1px solid #FFBE00
@@ -51,11 +49,18 @@
     font-weight: 600;
   }
 }
+.ng-parallax {
+  width: 1170px;
+  position: absolute; 
+  top: 7em; 
+  z-index: -1
+}
 /* Movies' grid and cards */
 .programa {
   background-color: black;
   figure {
     background-size: cover;
+    background-color: #F1EDE1;
     .glyphicon {
       font-size: 2.5em;
       color: #C51011;
@@ -134,6 +139,7 @@
 .movie-card{
   background-color: #FFF;
   border-radius: 3px;
+  border-bottom: 2px solid #FFBE00;
 
   color: #333;
 

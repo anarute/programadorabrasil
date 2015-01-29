@@ -42,7 +42,7 @@ angular.module( 'programadoraBrasil.home', [
 .controller( 'homeCtrl', function HomeController( $scope, $http) {
   $scope.sinopse = function(descricao) {
     var sinopse = descricao.split('.');
-    return sinopse[0];
+    return sinopse[0]+" […]";
   };
   $http.get('http://www.programadorabrasil.gov.br/pb_api/programa/?format=json').
     success(function(data, status, headers, config) {
@@ -62,11 +62,11 @@ angular.module( 'programadoraBrasil.home', [
     console.log("home pau no json");
   });
 })
-.directive('parallax', [ // efeito paralaxe nos círculos
+.directive('ngParallax', [ // efeito paralaxe nos círculos
   '$window',
   function ($window) {
     return {
-      restrict: 'A',
+      restrict: 'C',
       link: function (scope, element, attrs) {
         angular.element(window).bind('scroll', function () {
           var pos = $window.scrollY;
