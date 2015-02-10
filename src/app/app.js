@@ -3,6 +3,7 @@ angular.module( 'programadoraBrasil', [
   'templates-common',
   'programadoraBrasil.home',
   'programadoraBrasil.about',
+  'programadoraBrasil.cadastro',
   'programadoraBrasil.programas',
   'programadoraBrasil.programas.service',
   'programadoraBrasil.filmes',
