@@ -66,7 +66,7 @@ angular.module( 'programadoraBrasil.home', [
   '$window',
   function ($window) {
     return {
-      restrict: 'C',
+      restrict: 'A',
       link: function (scope, element, attrs) {
         angular.element(window).bind('scroll', function () {
           var pos = $window.scrollY;

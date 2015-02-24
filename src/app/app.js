@@ -27,6 +27,9 @@ angular.module( 'programadoraBrasil', [
     // to active whenever 'contacts.list' or one of its decendents is active.
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
+    $rootScope.$on('$stateChangeSuccess', function() {
+       document.body.scrollTop = document.documentElement.scrollTop = 0;
+    });
     }
   ]
 )
@@ -35,10 +38,9 @@ angular.module( 'programadoraBrasil', [
   console.log($state);
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
+      $scope.pageTitle = toState.data.pageTitle + ' | Programadora Brasil' ;
     }
   });
 })
-
 ;
 
