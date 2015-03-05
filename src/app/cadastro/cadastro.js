@@ -15,11 +15,35 @@ angular.module( 'programadoraBrasil.cadastro', [
     data:{ pageTitle: 'Cadastro' }
   });
 })
-
-/**
- * And of course we define a controller for our route.
- */
-.controller( 'CadastroCtrl', function CadastroController( $scope, $http) {
-});
-
+.controller( 'CadastroCtrl', function CadastroController( $scope, $http) {  
+  $scope.mudaCadastro = function(tipo) {
+    $scope.cadastro = {};
+    if(tipo == 'usuario') $scope.cadastro.usuario = true; 
+    if(tipo == 'exibidor') $scope.cadastro.exibidor = true; 
+    if(tipo == 'realizador') $scope.cadastro.realizador = true; 
+    
+  };
+})
+.directive('cadastro', [ // efeito paralaxe nos círculos
+  function () {
+    return {
+      restrict: 'A',
+      link: function (scope, element, attrs) {
+        element.bind('click',function(){
+          var fator = attrs.cadastro,
+              desloc = 15 * fator+"% bottom",
+              tri = document.getElementById('tri');
+          angular.element(tri).css('backgroundPosition',desloc);
+        });
+        /*
+        angular.element('.ng-no-paralax').bind('', function () {
+          var pos = $window.scrollY;
+          element.css('marginTop',pos/2+'px');
+          scope.$apply();
+        });*/
+      }
+    };
+  }
+])
+;
 

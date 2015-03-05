@@ -1,12 +1,12 @@
 <div ng-controller="CadastroCtrl" class="cadastro">
 
     <header class="main container ">
-    <div class="ng-parallax">
+    <div class="ng-no-parallax" id="tri">
         <p style="text-align: center; font-size: 1.3em; color: #666; margin: 0px 0px 2em;">Bem vindo ao site da Programadora Brasil! <a href="#">Faça o login</a> ou cadastre-se em uma das categorias abaixo:</p>
         <div class="col-sm-12">
             <div class="col-sm-4">
                 <figure class="cta-home">
-                    <header><a ui-sref="programas.list">Usuário</a>
+                    <header><a data-cadastro="1" ng-click="mudaCadastro('usuario')" ui-sref="usuario">Usuário</a>
                     </header>
                     <div class="icon-home">
                         <img src="assets/img/usuario.png" />
@@ -18,7 +18,7 @@
             </div>
             <div class="col-sm-4">
                 <figure class="cta-home">
-                    <header><a ng-href="#">Exibidor</a>
+                    <header><a data-cadastro="3.3" ng-click="mudaCadastro()" ng-sref="exibidor">Exibidor</a>
                     </header>
                     <div class="icon-home">
                         <img src="assets/img/exibidor.png" />
@@ -30,7 +30,7 @@
             </div>
             <div class="col-sm-4">
                 <figure class="cta-home">
-                    <header><a ng-href="#">Realizador</a>
+                    <header><a  data-cadastro="5.7" ng-click="mudaCadastro()" ng-sref="realizador">Realizador</a>
                     </header>
                     <div class="icon-home">
                         <img src="assets/img/realizador.png" />
@@ -42,9 +42,11 @@
             </div>
         </div>
     </div>
+    <div class="tri">
+    </div>
     </header>
-    <div class="content" style="background-color: #F1EDE1; margin-top: 28em">
-        <div class="container">
+    <div class="content" style="background-color: #F1EDE1; margin-top: 29em">
+        <div class="container" ng-show="cadastro.usuario">
         <div class="col-sm-4 col-sm-offset-1">
             <figure class="text-center">
                 <img src="assets/img/usuario.png" />
