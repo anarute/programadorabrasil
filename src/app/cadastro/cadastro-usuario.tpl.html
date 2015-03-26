@@ -1,0 +1,77 @@
+        <div class="container">                        <!-- cadastro de usuário -->
+        <div class="col-sm-4 col-sm-offset-1">
+            <figure class="text-center">
+                <img src="assets/img/usuario.png" />
+                <h2 style="margin-top: 0">usuário</h2>
+            </figure>
+            <hr class="dotted" />
+            
+            <h3>Quem pode se inscrever?</h3>
+            <p>Todos que quiserem acessar o acervo da programadora</p>
+            <h3>Ao que terá acesso?</h3>
+            <p>A todo acervo digital (<a tooltip-placement="top" href="#" tooltip="Sigla para Video on Demand (Vídeo por demanda)">VOD</a>) e físico (DVDs, catálogos), mediante pagamento</p>
+        </div>
+        <div class="col-sm-7">
+            <form style="margin-top: 3em "class="form-horizontal">
+            <fieldset>
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="email">Email</label>  
+              <div class="col-md-5">
+              <input id="email" name="email" placeholder="" class="form-control input-md" required="" type="text">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="email">Confirme</label>  
+              <div class="col-md-5">
+              <input id="email" name="email" placeholder="" class="form-control input-md" required="" type="text">
+              <span class="help-block">Será seu login</span>  
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="senha">Senha</label>
+              <div class="col-md-5">
+                <input id="senha" name="senha" placeholder="" class="form-control input-md" required="" type="password">
+                <span class="help-block">Somente letras e números</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="cpf">CPF</label>  
+              <div class="col-md-5">
+              <input id="cpf" name="cpf" placeholder="" class="form-control input-md" required="" type="text" ng-model="cpf" ui-br-cpf-mask>
+              <span class="help-block">Somente números</span>  
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="estado">UF</label>
+              <div class="col-md-2">
+                <select id="estado" combo-estado name="estado" class="form-control">
+                  
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="cidade">cidade</label>
+              <div class="col-md-5">
+                <select disabled="disable" id="cidade" name="cidade" class="form-control">
+                  <option value="">Selecione um estado</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              
+              <div class="col-md-2 col-md-offset-3">
+                <input class="btn btn-primary" type="submit" value="Enviar" />
+              </div>
+            </div>
+
+            </fieldset>
+            </form>
+        </div>
+    </div>
+                                                                            <!-- CADASTRO DE EXIBIDOR -->

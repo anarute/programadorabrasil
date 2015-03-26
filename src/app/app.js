@@ -13,8 +13,8 @@ angular.module( 'programadoraBrasil', [
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
-    $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise( '/' );
+    $locationProvider.html5Mode(true).hashPrefix('!');
 })
 
 .run(
@@ -42,5 +42,21 @@ angular.module( 'programadoraBrasil', [
     }
   });
 })
+.directive('animateOnChange', [ // transições de seções!
+  '$animate',
+  '$timeout',
+  function ($animate, $timeout) {
+    return function (scope, elem, attr) {
+      scope.$watch(attr.animateOnChange, function () {
+        c = 'show';
+        $animate.removeClass(elem, c, function () {
+          $timeout(function () {
+            $animate.addClass(elem, c);
+          }, 300);
+        });
+      });
+    };
+  }
+])
 ;
 

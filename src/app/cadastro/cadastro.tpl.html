@@ -6,7 +6,7 @@
         <div class="col-sm-12">
             <div class="col-sm-4">
                 <figure class="cta-home">
-                    <header><a data-cadastro="1" ng-click="mudaCadastro('usuario')" ui-sref="usuario">Usuário</a>
+                    <header><a data-cadastro="1" ng-href="cadastro/usuario">Usuário</a>
                     </header>
                     <div class="icon-home">
                         <img src="assets/img/usuario.png" />
@@ -18,7 +18,7 @@
             </div>
             <div class="col-sm-4">
                 <figure class="cta-home">
-                    <header><a data-cadastro="3.3" ng-click="mudaCadastro('exibidor')" ng-sref="exibidor">Exibidor</a>
+                    <header><a data-cadastro="3.3" ng-href="cadastro/exibidor">Exibidor</a>
                     </header>
                     <div class="icon-home">
                         <img src="assets/img/exibidor.png" />
@@ -30,7 +30,7 @@
             </div>
             <div class="col-sm-4">
                 <figure class="cta-home">
-                    <header><a  data-cadastro="5.7" ng-click="mudaCadastro()" ng-sref="realizador">Realizador</a>
+                    <header><a  data-cadastro="5.7" ng-href="cadastro/realizador">Realizador</a>
                     </header>
                     <div class="icon-home">
                         <img src="assets/img/realizador.png" />
@@ -45,159 +45,6 @@
     <div class="tri">
     </div>
     </header>
-    <div class="content" style="background-color: #F1EDE1; margin-top: 29em">
-        <div class="container" ng-show="cadastro.usuario"> <!-- cadastro de usuário -->
-        <div class="col-sm-4 col-sm-offset-1">
-            <figure class="text-center">
-                <img src="assets/img/usuario.png" />
-                <h2 style="margin-top: 0">usuário</h2>
-            </figure>
-            <hr class="dotted" />
-            
-            <h3>Quem pode se inscrever?</h3>
-            <p>Todos que quiserem acessar o acervo da programadora</p>
-            <h3>Ao que terá acesso?</h3>
-            <p>A todo acervo digital (<a tooltip-placement="top" href="#" tooltip="Sigla para Video on Demand (Vídeo por demanda)">VOD</a>) e físico (DVDs, catálogos), mediante pagamento</p>
-        </div>
-        <div class="col-sm-7">
-            <form style="margin-top: 3em "class="form-horizontal">
-            <fieldset>
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="email">Email</label>  
-              <div class="col-md-5">
-              <input id="email" name="email" placeholder="" class="form-control input-md" required="" type="text">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="email">Confirme</label>  
-              <div class="col-md-5">
-              <input id="email" name="email" placeholder="" class="form-control input-md" required="" type="text">
-              <span class="help-block">Será seu login</span>  
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="senha">Senha</label>
-              <div class="col-md-5">
-                <input id="senha" name="senha" placeholder="" class="form-control input-md" required="" type="password">
-                <span class="help-block">Somente letras e números</span>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="cpf">CPF</label>  
-              <div class="col-md-5">
-              <input id="cpf" name="cpf" placeholder="" class="form-control input-md" required="" type="text">
-              <span class="help-block">Somente números</span>  
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="estado">UF</label>
-              <div class="col-md-2">
-                <select id="estado" name="estado" class="form-control">
-                  <option value="auto">auto</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="cidade">cidade</label>
-              <div class="col-md-5">
-                <select id="cidade" name="cidade" class="form-control">
-                  <option value="auto">auto</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              
-              <div class="col-md-2 col-md-offset-3">
-                <input class="btn btn-primary" type="submit" value="Enviar" />
-              </div>
-            </div>
-
-            </fieldset>
-            </form>
-        </div>
+    <div class="content animate-slide" animate-on-change="mainUrl" style="background-color: #F1EDE1; margin-top: 29em" ui-view="cadastroForm">
     </div>
-    <!-- CADASTRO DE EXIBIDOR -->
-    <div class="container" ng-show="cadastro.exibidor"> 
-        <div class="col-sm-4 col-sm-offset-1">
-            <figure class="text-center">
-                <img src="assets/img/exibidor.png" />
-                <h2 style="margin-top: 0">exibidor</h2>
-            </figure>
-            <hr class="dotted" />
-            
-            <h3>Quem pode se inscrever?</h3>
-            <p>Instituições de ensino, cineclubes, bibliotecas e demais organizações que desejam adquirir programas e/ou vídeos para exibição aberta.</p>
-            <h3>Ao que terá acesso?</h3>
-            <p>A todo acervo digital (<a tooltip-placement="top" href="#" tooltip="Sigla para Video on Demand (Vídeo por demanda)">VOD</a>) e físico (DVDs, catálogos), mediante pagamento</p>
-        </div>
-        <div class="col-sm-7">
-            <form style="margin-top: 3em "class="form-horizontal">
-            <fieldset>
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="cnpj">CNPJ</label>  
-              <div class="col-md-5">
-              <input id="cnpj" name="cnpj" placeholder="" class="form-control input-md" required="" type="text">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="email">Email</label>  
-              <div class="col-md-5">
-              <input id="email" name="email" placeholder="" class="form-control input-md" required="" type="text">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="email">Confirme</label>  
-              <div class="col-md-5">
-              <input id="email" name="email" placeholder="" class="form-control input-md" required="" type="text">
-              <span class="help-block">Será seu login</span>  
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="senha">Senha</label>
-              <div class="col-md-5">
-                <input id="senha" name="senha" placeholder="" class="form-control input-md" required="" type="password">
-                <span class="help-block">Somente letras e números</span>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="cpf">CPF</label>  
-              <div class="col-md-5">
-              <input id="cpf" name="cpf" placeholder="" class="form-control input-md" required="" type="text">
-              <span class="help-block">Somente números</span>  
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="estado">UF</label>
-              <div class="col-md-2">
-                <select id="estado" name="estado" class="form-control">
-                  <option value="auto">auto</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="cidade">cidade</label>
-              <div class="col-md-5">
-                <select id="cidade" name="cidade" class="form-control">
-                  <option value="auto">auto</option>
-                </select>
-              </div>
-            </div>
-
-            </fieldset>
-            </form>
-        </div>
-    </div>
-
 </div>
