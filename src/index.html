@@ -28,13 +28,14 @@
 	-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- google webfonts -->
 	<link href='assets/type/type.css' rel='stylesheet' type='text/css'>
 	<!-- compiled CSS --><% styles.forEach( function ( file ) { %>
 	<link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
-	<!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+	<!-- compiled JavaScript -->
+	<script type="text/javascript" src="assets/js/spin.min.js"></script>
+	<% scripts.forEach( function ( file ) { %>
 	<script type="text/javascript" src="<%= file %>"></script><% }); %>
-	<script type="text/javascript" charset="ISO-8859-1" src="assets/js/cidades-estados-1.0.js"></script>
+	<script type="text/javascript" charset="ISO-8859-1" src="assets/js/cidades-estados-1.0.js"></script>	
 	<!-- G+ button. proavavelmente não será usado
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
 			{ "parsetags": "explicit" }

@@ -70,8 +70,7 @@ angular.module( 'programadoraBrasil.cadastro', [
 .controller( 'CadastroCtrl', function CadastroController( $scope, $http,  $state, $location) {  
   $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
     if($state.current.url == '/cadastro') { $state.transitionTo('cadastro.usuario'); } 
-    $scope.mainUrl = toState.name+'sggasgas';
-    console.log($scope.mainUrl);
+    $scope.mainUrl = toState.name;
   });
 })
 .directive('cadastro', [ // efeito paralaxe nos círculos

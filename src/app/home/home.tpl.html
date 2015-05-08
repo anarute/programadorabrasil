@@ -118,6 +118,7 @@
                 <header>
                     <h2><i class="glyphicon glyphicon-film"></i> Últimos Filmes</h2>
                 </header>
+                <span class="col-sm-1 spinner" id="spinner-filmes" ng-hide="filmes"></span>
                 <div class="col-sm-12" ng-repeat="filme in filmes | limitTo:3">
                     <article class="movie-card panel panel-default filme">
                         <header class="panel-heading" style="background: #FFBE00">
@@ -143,6 +144,7 @@
                 <header>
                     <h2><a ng-href="programas"><i class="glyphicon glyphicon-tasks"></i> Últimos Programas</a></h2>
                 </header>
+                <span class="col-sm-1 spinner" id="spinner-programas" ng-hide="programas"></span>
                 <div class="col-sm-12" ng-repeat="programa in programas | limitTo:5">
                     <article class="movie-card panel panel-default programa">
                         <header class="panel-heading" style="background: #FFBE00">

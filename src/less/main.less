@@ -111,6 +111,11 @@ a {
   }
 }
 
+.spinner {
+  height: 5em;
+  margin-left: 1em;
+}
+
 /**
  * Footer
  */
@@ -131,6 +136,8 @@ footer{
 }
 
 .animate-fade , .ng-fade.ng-hide{
+  transition: opacity ease-in-out 0.6s;
+  -webkit-transition: opacity ease-in-out 0.6s ;
   opacity: 0;
 }
 .animate-fade.show , .ng-fade {
@@ -141,12 +148,11 @@ footer{
 }
 
 .animate-slide {
-  max-height: 10px;
+  max-height: 0px;
   overflow: hidden;
   transition: all ease-in-out 0.9s ;
   -webkit-transition:all ease-in-out 0.9s ;
 }
-
 .animate-slide.show {
   max-height: 10000px;
    transition: all ease-in-out 2s ;

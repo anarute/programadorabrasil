@@ -14,7 +14,6 @@
  */
 angular.module( 'programadoraBrasil.home', [
   'ui.router',
-  'plusOne',
   'programadoraBrasil.programas.service'
 ])
 
@@ -33,30 +32,37 @@ angular.module( 'programadoraBrasil.home', [
       }
     },
     data:{ pageTitle: 'Home' }
-  });
+  }); 
 })
 
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'homeCtrl', function HomeController( $scope, $http) {
+.controller( 'homeCtrl', function HomeController( $rootScope, $scope, $http, $timeout) {
   $scope.sinopse = function(descricao) {
     var sinopse = descricao.split('.');
     return sinopse[0]+" […]";
   };
+  var idSpinnerFilmes = document.getElementById('spinner-filmes');
+  var spinnerFilmes = new Spinner($rootScope.spinnerOpts).spin(idSpinnerFilmes);
   $http.get('http://www.programadorabrasil.gov.br/pb_api/programa/?format=json').
     success(function(data, status, headers, config) {
       programas = data.results;
       $scope.programas = programas;
+      spinnerProgramas.stop();
       //console.log(programas);
     }).
     error(function(data, status, headers, config) {
       console.log("home pau no json");
-    });  
+    });
+  var idSpinnerProgramas = document.getElementById('spinner-programas');
+  var spinnerProgramas = new Spinner($rootScope.spinnerOpts).spin(idSpinnerProgramas);
   $http.get('http://www.programadorabrasil.gov.br/pb_api/filme/?format=json').
   success(function(data, status, headers, config) {
     filmes = data.results;
     $scope.filmes = filmes;
+    spinnerFilmes.stop();
+
   }).
   error(function(data, status, headers, config) {
     console.log("home pau no json");

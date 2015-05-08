@@ -68,8 +68,8 @@ module.exports = {
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/angular-input-masks-master/masks.min.js',
-      'vendor/angular-input-masks-master/masks.min.js',
-      'vendor/angular-ui-router.stateHelper/statehelper.min.js'
+      'vendor/angular-ui-router.stateHelper/statehelper.min.js',
+      'vendor/angular-animate/angular-animate.min.js'
     ],
     css: [
     ],

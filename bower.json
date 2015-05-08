@@ -9,5 +9,7 @@
     "angular-ui-router": "~0.2",
     "angular-input-masks": "~1.4.0",
     "angular-ui-router.stateHelper": "1.2.1"
+  },
+  "dependencies": {
   }
 }
